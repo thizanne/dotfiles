@@ -1,6 +1,13 @@
 ;; lsp
 ;; (require 'lsp-mode)
 
+;; Company-mode
+
+(add-hook
+ 'after-init-hook
+ 'global-company-mode
+ )
+
 ;; term-keys
 (require 'term-keys)
 (term-keys-mode t)
