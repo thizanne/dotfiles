@@ -6,12 +6,14 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
-   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
+   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff"
+    "#eeeeec"])
  '(bibtex-align-at-equal-sign t)
  '(company-idle-delay 0.3)
  '(custom-enabled-themes '(solarized))
  '(custom-safe-themes
-   '("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default))
+   '("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26"
+     default))
  '(frame-background-mode 'dark)
  '(inhibit-startup-screen t)
  '(org-beamer-environments-extra '(("onlyenv" "O" "\\begin{onlyenv}%a" "\\end{onlyenv}")))
@@ -19,15 +21,21 @@
  '(org-emphasis-regexp-components '("     ('\"{" "-       .,:!?;'\")}\\" "," "." 3) t)
  '(org-latex-listings 'minted)
  '(org-latex-minted-langs
-   '((emacs-lisp "common-lisp")
-     (cc "c++")
-     (cperl "perl")
-     (shell-script "bash")
-     (typerex "ocaml")))
+   '((emacs-lisp "common-lisp") (cc "c++") (cperl "perl")
+     (shell-script "bash") (typerex "ocaml")))
  '(org-latex-pdf-process
    '("latexmk -pdflatex='xelatex --shell-escape' -pdf -bibtex %f"))
+ '(org-latex-src-block-backend 'minted)
  '(package-selected-packages
-   '(counsel flycheck lsp-ui lsp-treemacs lsp-ivy citeproc-org org-plus-contrib lsp-java lsp-mode org-ref yaml-mode sml-mode auctex company erlang graphviz-dot-mode magit-gitflow markdown-mode+ proof-general term-keys iedit php-mode nlinum anzu rainbow-delimiters rainbow-mode zlc sass-mode python-mode pkgbuild-mode mediawiki markdown-mode magit haskell-mode company-quickhelp company-coq company-auctex color-theme))
+   '(anzu auctex citeproc-org color-theme company company-auctex
+          company-coq company-quickhelp counsel erlang flycheck
+          graphviz-dot-mode haskell-mode iedit lsp-ivy lsp-java
+          lsp-mode lsp-treemacs lsp-ui magit magit-gitflow
+          markdown-mode markdown-mode+ mediawiki nlinum org-contrib
+          org-plus-contrib org-ref php-mode pkgbuild-mode
+          proof-general python-black python-mode rainbow-delimiters
+          rainbow-mode rust-mode sass-mode sml-mode term-keys tuareg
+          which-key yaml-mode zlc))
  '(proof-assistant-home-page "http://coq.inria.fr/")
  '(proof-context-command "Print All. ")
  '(proof-electric-terminator-enable t)
@@ -57,8 +65,7 @@
  '(proof-shell-eager-annotation-end "\377\\|done\\]\\|</infomsg>\\|\\*\\*\\*\\*\\*\\*\\|) >")
  '(proof-shell-eager-annotation-start "\376\\|\\[Reinterning\\|Warning:\\|TcDebug \\|<infomsg>")
  '(proof-shell-eager-annotation-start-length 32)
- '(proof-shell-end-goals-regexp "
-(dependent evars:")
+ '(proof-shell-end-goals-regexp "\12(dependent evars:")
  '(proof-shell-error-regexp
    "^\\(Error:\\|Discarding pattern\\|Syntax error:\\|System Error:\\|User Error:\\|User error:\\|Anomaly[:.]\\|Toplevel input[,]\\)")
  '(proof-shell-font-lock-keywords 'coq-font-lock-keywords-1)
@@ -67,8 +74,7 @@
  '(proof-shell-interrupt-regexp "User Interrupt.")
  '(proof-shell-proof-completed-regexp
    "No\\s-+more\\s-+subgoals\\.\\|Subtree\\s-proved!\\|Proof\\s-completed")
- '(proof-shell-restart-cmd "Reset Initial.
- ")
+ '(proof-shell-restart-cmd "Reset Initial.\12 ")
  '(proof-shell-result-end "\372 End Pbp result \373")
  '(proof-shell-result-start "\372 Pbp result \373")
  '(proof-shell-start-goals-regexp "[0-9]+\\(?: focused\\)? subgoals?")
@@ -82,8 +88,7 @@
  '(proof-tree-cheating-regexp "admit")
  '(proof-tree-configured t)
  '(proof-tree-existential-regexp "\\(\\?[0-9]+\\)")
- '(proof-tree-existentials-state-end-regexp ")
-")
+ '(proof-tree-existentials-state-end-regexp ")\12")
  '(proof-tree-existentials-state-start-regexp "^(dependent evars:")
  '(proof-tree-extract-instantiated-existentials 'coq-extract-instantiated-existentials)
  '(proof-tree-find-begin-of-unfinished-proof 'coq-find-begin-of-unfinished-proof)
@@ -93,9 +98,7 @@
  '(proof-tree-navigation-command-regexp "^\\(Focus\\)\\|\\(Unfocus\\)")
  '(proof-tree-show-sequent-command 'coq-show-sequent-command)
  '(safe-local-variable-values
-   '((org-latex-minted-options
-      ("frame" "none")
-      ("fontsize" "\\small"))
+   '((org-latex-minted-options ("frame" "none") ("fontsize" "\\small"))
      (org-latex-minted-options quote
                                (("frame" "none")
                                 ("fontsize" "\\small")
@@ -103,8 +106,7 @@
      (org-latex-prefer-user-labels . t)
      (org-latex-pdf-process "latexmk -gg -pdf -bibtex %f")
      (org-latex-pdf-process . "latexmk -gg -pdf -bibtex")
-     (org-latex-listings . listings)
-     (org-latex-pdf-process . latexmk)
+     (org-latex-listings . listings) (org-latex-pdf-process . latexmk)
      (org-latex-pdf-process . "latexmk -gg -pdf -bibtex %f")))
  '(typerex-font-lock-symbols t)
  '(typerex-library-path "/usr/lib/ocaml"))
