@@ -58,17 +58,15 @@
 
 (add-hook 'tuareg-mode-hook 'merlin-mode t)
 (add-hook 'caml-mode-hook 'merlin-mode t)
-(add-hook 'typerex-mode-hook 'merlin-mode t)
 
 (add-hook 'merlin-mode-hook (lambda () (local-set-key (kbd "C-c l") 'merlin-locate-type)))
 
 ;;; Auto-completion
 ;; (add-to-list 'company-backends 'merlin-company-backend)
 (setq merlin-completion-with-doc t)
-
 (setq merlin-command 'opam)
 
-;; tuareg/typerex
+;; tuareg
 
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
@@ -157,21 +155,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
-;; zlc
-
-;; (require 'zlc)
-;; (zlc-mode t)
-;; (let ((map minibuffer-local-map))
-;;   ;;; like menu select
-;;   (define-key map (kbd "<down>")  'zlc-select-next-vertical)
-;;   (define-key map (kbd "<up>")    'zlc-select-previous-vertical)
-;;   (define-key map (kbd "<right>") 'zlc-select-next)
-;;   (define-key map (kbd "<left>")  'zlc-select-previous)
-
-;;   ;;; reset selection
-;;   (define-key map (kbd "C-c") 'zlc-reset)
-;;   )
-
 ;; pkgbuild
 
 (require 'pkgbuild-mode)
@@ -182,41 +165,10 @@
 ;; (add-to-list 'auto-mode-alist '("\\.lua" . lua-mode))
 ;; (autoload 'lua-mode "lua-mode" "Lua editing mode" t)
 
-;; nxhtml
-
-;;(load "/usr/share/emacs/site-lisp/nxhtml/autostart.el")
-;;(add-to-list 'auto-mode-alist '("\\.html$" nxhtml-mode))
-;;(add-to-list 'auto-mode-alist '("\\.x(ht)?ml$" nxhtml-mode))
-
 ;; php
 
 ;;(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 ;;(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
-
-;; POV-ray
-
-;;(autoload 'pov-mode "pov-mode" "POV-Ray mode." t)
-;;(add-to-list 'auto-mode-alist '("\\.pov\\'" . pov-mode))
-;;(add-to-list 'auto-mode-alist '("\\.inc\\'" . pov-mode))
-
-;; mediawiki
-
-(require 'mediawiki)
-
-(add-hook
- 'mediawiki-mode-hook
- '(lambda ()
-    (global-set-key (kbd "M-RET") 'mediawiki-open-page-at-point)
-    ))
-
-(setq
- mediawiki-site-alist
- (quote
-  (
-   ("wiki.rez" "http://wiki.rezometz.org/" "Suze" "" "Accueil")
-   ("wpfr" "http://fr.wikipedia.org/w/" "thizanne" "" "Main Page")
-   )))
-
 
 ;; color-theme
 
@@ -225,47 +177,3 @@
 
 (add-to-list 'custom-theme-load-path "~/config/emacs-color-theme-solarized")
 (load-theme 'solarized t)
-
-;; (defface tuareg-font-lock-governing-face
-;;   '((((background light))
-;;      (:foreground "#b58900" :bold t))
-;;     (t (:foreground "#b58900" :bold t)))
-;;   "Face description for governing/leading keywords."
-;;   :group 'tuareg-faces)
-
-;; (defvar tuareg-font-lock-governing-face
-;;   'tuareg-font-lock-governing-face)
-
-;; (defface tuareg-font-lock-operator-face
-;;   '((((background light)) (:foreground "brown"))
-;;     (t (:foreground "#2f85f5")))
-;;   "Face description for all operators."
-;;   :group 'tuareg-faces)
-
-;; (defvar tuareg-font-lock-operator-face
-;;  'tuareg-font-lock-operator-face)
-
-;; (defun color-theme-thizanne ()
-;;   (interactive)
-;;   (color-theme-install
-;;    '(color-theme-thizanne
-;;      ((background-mode . light)
-;;       (border-color . "#000000")
-;;       (cursor-color . "#5cf4ff")
-;;       (foreground-color . "#ffffff")
-;;       (mouse-color . "black"))
-;;      (fringe ((t (:background "#000000"))))
-;;      (mode-line ((t (:foreground "#f50000" :background "#ffea0a"))))
-;;      (region ((t (:background "#091158"))))
-;;      (font-lock-builtin-face ((t (:foreground "#008000"))))
-;;      (font-lock-comment-face ((t (:foreground "#fade00"))))
-;;      (font-lock-function-name-face ((t (:foreground "#2f85f5"))))
-;;      (font-lock-keyword-face ((t (:foreground "#0066eb"))))
-;;      (font-lock-string-face ((t (:foreground "#ff8000"))))
-;;      (font-lock-type-face ((t (:foreground "#00ffac"))))
-;;      (font-lock-variable-name-face ((t (:foreground "#00d4eb"))))
-;;      (minibuffer-prompt ((t (:foreground "#ffbd05" :bold t))))
-;;      (font-lock-warning-face ((t (:foreground "Red" :bold t))))
-;;      )))
-
-;; (provide 'color-theme-thizanne)
