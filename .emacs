@@ -14,7 +14,7 @@
 
 (add-hook
  'after-init-hook
- (lambda () (load "~/.emacs-packages-init.el")))
+ (lambda () (load "~/.emacs-packages.el")))
 
 ;; Company-mode
 
@@ -27,7 +27,7 @@
 
 (add-hook
  'after-init-hook
- (lambda () (load "~/.emacs-org-init.el")))
+ (lambda () (load "~/.emacs-org.el")))
 
 ;; packages
 
