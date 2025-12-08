@@ -102,6 +102,13 @@
    )
  )
 
+;; rust
+
+(require 'rust-mode)
+(setq rust-format-on-save t)
+
+(add-hook 'rust-mode-hook 'lsp-deferred)
+
 ;; auctex
 
 (load "auctex.el" nil t t)
