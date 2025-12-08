@@ -6,6 +6,7 @@ import XMonad.Actions.SpawnOn
 import XMonad.Layout.PerWorkspace
 import XMonad.Config.Azerty
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders
 import XMonad.Prompt
@@ -104,10 +105,10 @@ myManageHook = composeAll $
                 -- $ xprop | grep WM_CLASS
                 className =? "Chromium"    --> doF (W.shift "δ"),
                 className =? "firefox"     --> doF (W.shift "Web"),
-                className =? "thunderbird" --> doF (W.shift "Mail"),
-                className =? "Skype"       --> doF (W.shift "Chat")
+                className =? "org.mozilla.Thunderbird" --> doF (W.shift "Mail"),
+                isDialog --> doFloat
                ]
-    where myFloats = ["Skype", "Gimp"]
+    where myFloats = ["Gimp"]
 
 
 main = xmonad =<< statusBar "xmobar" myPP toggleStrutsKey myConfig
