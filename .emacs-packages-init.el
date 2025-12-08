@@ -37,7 +37,7 @@
 ;; ;; To automatically add opam emacs directory to the load-path
 (setq opam-share
       (substring
-       (shell-command-to-string "opam config var share 2> /dev/null")
+       (shell-command-to-string "opam var share 2> /dev/null")
        0 -1))
 ;; (setq opam-share "~/.opam/4.04.2/share")
 (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
@@ -63,6 +63,7 @@
 
 ;;; Auto-completion
 ;; (add-to-list 'company-backends 'merlin-company-backend)
+(setq merlin-use-auto-complete-mode 'easy)
 (setq merlin-completion-with-doc t)
 (setq merlin-command 'opam)
 
@@ -78,6 +79,10 @@
 
 (setq ocp-server-command "/usr/bin/ocp-wizard")
 (setq ocp-theme "tuareg-like")
+
+(require 'ocamlformat)
+(add-hook 'tuareg-mode-hook
+          (lambda () (add-hook 'before-save-hook #'ocamlformat-before-save)))
 
 ;; (add-hook 'tuareg-mode-hook 'lsp-deferred)
 
