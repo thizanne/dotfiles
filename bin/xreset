@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+
+xrandr --output eDP-1 --auto --output DP-1-0 --off
+xrandr --output eDP-1 --auto --output DP-1-0 --auto --right-of eDP-1
