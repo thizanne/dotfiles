@@ -4,7 +4,7 @@ xrdb -nocpp -merge .Xkeycodes
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
 # export SSH_AUTH_SOCK
 
-prime-run urxvtd -q -o -f &
+urxvtd -q -o -f &
 xbindkeys &
 setxkbmap -layout fr -option ctrl:swapcaps
 numlockx &
@@ -23,9 +23,9 @@ blueberry-tray &
 xmodmap ~/.xmodmap &
 
 firefox &
-chromium &
+prime-run chromium &
 thunderbird &
-prime-run urxvtc &
-prime-run urxvtc -e zsh -i -c irc &
+urxvtc &
+urxvtc -e zsh -i -c irc &
 
 exec xmonad
