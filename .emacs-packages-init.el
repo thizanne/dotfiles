@@ -151,6 +151,13 @@
 (add-to-list 'auto-mode-alist '("\\.py" . python-mode))
 (setq py-shell-name "python3")
 
+(require 'flymake)
+(global-set-key (kbd "C-C C-x") 'flymake-goto-next-error)
+
+(require 'eglot)
+(add-hook 'python-mode-hook 'eglot-ensure)
+(add-hook 'python-mode-hook 'python-black-on-save-mode-enable-dwim)
+
 ;; ProofGeneral
 
 ;; TODO: load this properly when installed as emacs package :)
