@@ -1,5 +1,25 @@
 ;; custom file
 
+;; packages
+
+(require 'package)
+
+(add-to-list
+ 'package-archives
+ '("melpa" . "http://melpa.org/packages/")
+ t)
+
+(add-to-list
+ 'package-archives
+ '("org" . "http://orgmode.org/elpa/")
+ t)
+
+;; For term-keys
+(add-to-list
+ 'package-archives
+ '("cselpa" . "https://elpa.thecybershadow.net/packages/")
+ t)
+
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -21,26 +41,6 @@
  'after-init-hook
  (lambda () (load "~/.emacs-org.el")))
 
-;; packages
-
-(require 'package)
-
-(add-to-list
- 'package-archives
- '("melpa" . "http://melpa.org/packages/")
- t)
-
-(add-to-list
- 'package-archives
- '("org" . "http://orgmode.org/elpa/")
- t)
-
-;; For term-keys
-(add-to-list
- 'package-archives
- '("cselpa" . "https://elpa.thecybershadow.net/packages/")
- t)
-
 ;; global key bindings
 
 (global-set-key (kbd "C-v") 'scroll-up-line)
@@ -49,7 +49,6 @@
 (global-set-key (kbd "C-c ,") 'uncomment-region)
 (global-set-key (kbd "M-o") 'next-multiframe-window)
 (global-set-key (kbd "M-i") 'previous-multiframe-window)
-(global-set-key (kbd "C-c g") 'magit-status)
 
 ;; window look
 
@@ -58,9 +57,7 @@
 ;; line and column
 
 (column-number-mode 1)
-(global-nlinum-mode 1)
-
-(setq nlinum-format "%d ")
+(global-display-line-numbers-mode 1)
 
 ;; Distinguish camelCased words
 
