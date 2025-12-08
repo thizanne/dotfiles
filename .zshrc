@@ -109,15 +109,11 @@ alias reboot='systemctl reboot'
 
 alias caml='rlwrap ocaml -init /dev/null' # bare toplevel
 alias emacs='emacsclient.sh'
-alias emacsudo='EDITOR=emacsclient.sh visudo'
 alias ocaml='rlwrap ocaml'
 alias sml='rlwrap sml'
 alias smlnj='rlwrap smlnj'
 
 alias vba='VisualBoyAdvance'
-
-alias ssht='ssh maxibolt@tonbnc.fr -D 8081'
-alias sshm='ssh premieremetz@tonbnc.fr'
 
 alias irc='ssh -4 thibault@pmp6.fr -t "tmux a; zsh"'
 
