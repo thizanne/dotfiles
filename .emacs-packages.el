@@ -27,7 +27,7 @@
 
 (set-face-attribute
  'anzu-mode-line nil
- :foreground "yellow"
+ :foreground "green"
  :weight 'bold
  )
 
