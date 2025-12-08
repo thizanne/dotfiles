@@ -17,8 +17,10 @@ setopt INC_APPEND_HISTORY_TIME
 autoload -U select-word-style
 select-word-style Bash
 
+EMACSCLIENT='emacsclient --quiet --alternate-editor="" --create-frame'
+
 export GDK_USE_XFT=0
-export EDITOR='emacsclient.sh'
+export EDITOR="$EMACSCLIENT"
 export BROWSER='firefox'
 export LESS=-XRS # Display colors in less
 
@@ -108,7 +110,8 @@ alias halt='systemctl poweroff'
 alias reboot='systemctl reboot'
 
 alias caml='rlwrap ocaml -init /dev/null' # bare toplevel
-alias emacs='emacsclient.sh'
+alias emacs="$EMACSCLIENT"
+alias binemacs='command emacs'
 alias ocaml='rlwrap ocaml'
 alias sml='rlwrap sml'
 alias smlnj='rlwrap smlnj'
