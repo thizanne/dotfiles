@@ -6,13 +6,18 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
-   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff"
-    "#eeeeec"])
+   ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198"
+    "#657b83"])
  '(bibtex-align-at-equal-sign t)
  '(company-idle-delay 0.3)
  '(custom-enabled-themes '(solarized))
  '(custom-safe-themes
-   '("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26"
+   '("48d34b6afe72407ca494387c8bea495bb2deee96bd88516f302db1f11e1810a1"
+     "7fea145741b3ca719ae45e6533ad1f49b2a43bf199d9afaee5b6135fd9e6f9b8"
+     "55c81b8ddb2b6c3fa502b1ff79fa8fed6affe362447d5e72388c7d160a2879d0"
+     "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5"
+     "0f9a1b7a0f1d09544668297c1f04e5a5452ae1f4cf69f11b125f4cff1d54783d"
+     "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26"
      default))
  '(frame-background-mode 'dark)
  '(inhibit-startup-screen t)
@@ -27,15 +32,11 @@
    '("latexmk -pdflatex='xelatex --shell-escape' -pdf -bibtex %f"))
  '(org-latex-src-block-backend 'minted)
  '(package-selected-packages
-   '(anzu auctex citeproc-org color-theme company company-auctex
-          company-coq company-quickhelp counsel erlang flycheck
-          graphviz-dot-mode haskell-mode iedit lsp-ivy lsp-java
-          lsp-mode lsp-treemacs lsp-ui magit magit-gitflow
-          markdown-mode markdown-mode+ mediawiki nlinum org-contrib
-          org-plus-contrib org-ref php-mode pkgbuild-mode
-          proof-general python-black python-mode rainbow-delimiters
-          rainbow-mode rust-mode sass-mode sml-mode term-keys tuareg
-          which-key yaml-mode zlc))
+   '(anzu auctex company counsel erlang flycheck graphviz-dot-mode
+          haskell-mode iedit lsp-ivy lsp-java lsp-ui magit-gitflow
+          markdown-mode+ mediawiki nlinum org-contrib pkgbuild-mode
+          proof-general python-black python-mode rust-mode sml-mode
+          solarized-theme term-keys tuareg which-key yaml-mode))
  '(proof-assistant-home-page "http://coq.inria.fr/")
  '(proof-context-command "Print All. ")
  '(proof-electric-terminator-enable t)

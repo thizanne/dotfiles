@@ -31,9 +31,7 @@
 
 ;; package initialisation file
 
-(add-hook
- 'after-init-hook
- (lambda () (load "~/.emacs-packages.el")))
+(load "~/.emacs-packages.el")
 
 ;; org-mode special file
 

@@ -3,41 +3,40 @@
 
 ;; Company-mode
 
-(add-hook
- 'after-init-hook
- 'global-company-mode
- )
+(use-package company
+  :config (global-company-mode))
 
 ;; term-keys
-(require 'term-keys)
-(term-keys-mode t)
+(use-package term-keys
+  :config (term-keys-mode))
 
 ;; iedit
-(require 'iedit)
+(use-package iedit)
 
 ;; makefile
 
 ;; Matches Makefile[.something]
-(add-to-list 'auto-mode-alist '("/Makefile\\(\\..*\\)?" . makefile-mode))
+(use-package emacs
+  :mode ("/Makefile\\(\\..*\\)?" . makefile-mode))
 
 ;; anzu
 
-(require 'anzu)
-(global-anzu-mode t)
-
-(set-face-attribute
- 'anzu-mode-line nil
- :foreground "green"
- :weight 'bold
- )
+(use-package anzu
+  :config
+  (set-face-attribute
+   'anzu-mode-line nil
+   :foreground "green"
+   :weight 'bold)
+  :config (global-anzu-mode))
 
 ;; magit
 
-(global-set-key (kbd "C-x g") 'magit-status)
+(use-package magit
+  :bind ("C-x g" . magit-status))
 
 ;; dune
-(autoload 'lisp-mode "lisp" "Major mode for editing Lisp code" t)
-(add-to-list 'auto-mode-alist '("dune" . lisp-mode))
+(use-package lisp-mode
+  :mode "dune")
 
 ;; opam
 
@@ -111,46 +110,47 @@
 
 ;; rust
 
-(require 'rust-mode)
-(setq rust-format-on-save t)
-
-(add-hook 'rust-mode-hook 'lsp-deferred)
+(use-package rust-mode
+  :custom (rust-format-on-save t)
+  :hook (rust-mode . lsp-deferred))
 
 ;; auctex
 
-(load "auctex.el" nil t t)
-;;(load "preview-latex.el" nil t t)
-
-(add-to-list 'auto-mode-alist '("\\.hva" . tex-mode))
-
-(setq TeX-engine 'xetex)
-(setq TeX-PDF-mode t)
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-;; If you often use \include or \input, you should make AUCTeX aware
-;; of the multi-file document structure. You can do this with :
-(setq-default TeX-master nil)
+(use-package tex
+  :ensure auctex
+  :mode "\\.hva"
+  :custom
+  ((setq TeX-engine 'xetex)
+   (setq TeX-PDF-mode t)
+   (setq TeX-auto-save t)
+   (setq TeX-parse-self t)
+   ;; If you often use \include or \input, you should make AUCTeX aware
+   ;; of the multi-file document structure. You can do this with :
+   (setq-default TeX-master nil)
+  ))
 
 ;; erlang
 
 ;; (require 'erlang-start)
 ;; (require 'erlang-flymake)
 
-(add-to-list 'auto-mode-alist '("\\.erl" . erlang-mode))
-
-(setq erlang-root-dir "/usr/lib/erlang")
-(setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
+(use-package erlang-mode
+  :mode "\\.erl"
+  :custom
+  ((erlang-root-dir "/usr/lib/erlang")
+   (exec-path (cons "/usr/lib/erlang/bin" exec-path))))
 
 ;; graphviz
 
-(autoload 'graphviz-dot-mode "graphviz-dot-mode.el" "graphviz dot mode." t)
-(add-to-list 'auto-mode-alist '("\\.dot" . graphviz-dot-mode))
+(use-package graphviz-dot-mode
+  :mode "\\.dot")
 
 ;; haskell
 
-(add-to-list 'auto-mode-alist '("\\.xmobarrc" . haskell-mode))
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(use-package haskell-mode
+  :mode "\\.xmobarrc"
+  :hook (haskell-mode . turn-on-haskell-indent)
+  :hook (haskell-mode . turn-on-haskell-doc-mode))
 
 ;; python
 
@@ -175,16 +175,13 @@
 
 ;; markdown
 
-(autoload
-  'markdown-mode "markdown-mode.el"
-  "Major mode for editing Markdown files" t)
-
-(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+(use-package markdown-mode
+  :mode "\\.md$")
 
 ;; pkgbuild
 
-(require 'pkgbuild-mode)
-(add-to-list 'auto-mode-alist '("PKGBUILD$" . pkgbuild-mode))
+(use-package pkgbuild-mode
+  :mode "PKGBUILD$")
 
 ;; lua
 
@@ -198,8 +195,10 @@
 
 ;; color-theme
 
-;; (require 'color-theme)
-;; (color-theme-initialize)
-
-(add-to-list 'custom-theme-load-path "~/config/emacs-color-theme-solarized")
-(load-theme 'solarized t)
+(use-package solarized
+  :ensure solarized-theme
+  :config
+  ;; (load-theme 'solarized-selenized-dark t)
+  ;; TODO use less bold
+  (load-theme 'solarized-dark t)
+  )
