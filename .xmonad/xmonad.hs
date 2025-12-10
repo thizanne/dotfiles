@@ -14,7 +14,7 @@ import XMonad.Prompt.Shell
 import qualified XMonad.StackSet as W
 import XMonad.Util.Dmenu
 
-myTerminal = "prime-run urxvtc"
+myTerminal = "alacritty"
 
 myTerminalExec = myTerminal ++ " -e "
 

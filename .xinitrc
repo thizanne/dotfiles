@@ -1,10 +1,11 @@
+MYTERM=alacritty
+
 xrdb -load .Xresources
 xrdb -nocpp -merge .Xkeycodes
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
 # export SSH_AUTH_SOCK
 
-urxvtd -q -o -f &
 xbindkeys &
 setxkbmap -layout fr -option ctrl:swapcaps
 numlockx &
@@ -25,7 +26,7 @@ xmodmap ~/.xmodmap &
 firefox &
 prime-run chromium &
 thunderbird &
-urxvtc &
-urxvtc -e zsh -i -c irc &
+$MYTERM &
+$MYTERM -e zsh -i -c irc &
 
 exec xmonad

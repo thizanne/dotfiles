@@ -79,7 +79,7 @@ RPS1="%(?..%B%{$fg[red]%}%?%b%{$fg[default]%} / )%{$fg[cyan]%}%28<...<%~%<<%{$fg
 
 # Utilisation des titres de xterm
 case $TERM in
-    xterm*|rxvt*|Eterm|screen)
+    alacritty*|xterm*|rxvt*|Eterm|screen)
         precmd () {print -Pn "\e]0;%n@%m: %~\a"}
         ;;
 esac
@@ -87,7 +87,7 @@ esac
 # Alias
 
 alias diff='diff --color=auto'
-alias dup='urxvtc &' # To spawn urxvt in the same dir
+alias dup='alacritty &' # To spawn alacritty in the same dir
 
 alias ls='ls -FLh --literal'
 alias l='/bin/ls'

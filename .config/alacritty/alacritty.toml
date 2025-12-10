@@ -1,0 +1,37 @@
+[general]
+
+import = [
+  "/usr/lib/node_modules/alacritty-themes/themes/Solarized-Dark.toml",
+  "alacritty-for-term-keys.toml"
+]
+
+[selection]
+save_to_clipboard = true
+
+[env]
+TERM = "alacritty-direct"
+
+[font]
+size = 15
+offset.x = -1
+
+[font.normal]
+family = "Inconsolata"
+
+[[hints.enabled]]
+command = "xdg-open" # On Linux/BSD
+hyperlinks = true
+post_processing = true
+persist = false
+mouse = { enabled = true, mods = "Control" }
+binding = { key = "U", mods = "Super" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`\\\\]+"
+
+[[hints.enabled]]
+action = "Copy"
+hyperlinks = true
+post_processing = true
+persist = false
+mouse = { enabled = true, mods = "Alt" }
+binding = { key = "Y", mods = "Super" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`\\\\]+"
