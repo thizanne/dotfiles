@@ -1,6 +1,4 @@
 # Configuration zsh de Thibault Suzanne
-TERM=rxvt-unicode-256color
-#TERM=rxvt-unicode
 PATH=${HOME}/bin:${HOME}/.cabal/bin:$PATH
 
 XDG_CONFIG_HOME=${HOME}/.config
