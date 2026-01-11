@@ -8,7 +8,7 @@
     email = thi.suzanne@gmail.com
 
 [alias]
-    dot = !git --git-dir ~/.dotfiles/ --work-tree ~
+    dot = !git --git-dir ~/.dotfiles/.git/ --work-tree ~
     st = status
     df = diff
     co = checkout
