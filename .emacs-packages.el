@@ -135,8 +135,8 @@
 ;; (require 'erlang-start)
 ;; (require 'erlang-flymake)
 
-(use-package erlang-mode
-  :mode "\\.erl"
+(use-package erlang
+  :mode ("\\.erl" . erlang-mode)
   :custom
   ((erlang-root-dir "/usr/lib/erlang")
    (exec-path (cons "/usr/lib/erlang/bin" exec-path))))
