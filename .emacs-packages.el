@@ -36,6 +36,7 @@
 
 ;; dune
 (use-package lisp-mode
+  :ensure nil ;; Natively present in emacs but not as a package? This seems to work.
   :mode "dune")
 
 ;; opam
