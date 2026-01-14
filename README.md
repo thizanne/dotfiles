@@ -5,7 +5,7 @@
 I don't use a bare repo as being able to cd-in is invaluable for git debug/fixing.
 
 ```
-git clone https://github.com/thizanne/dotfiles.git $HOME/.dotfiles
+git clone git@github.com:thizanne/dotfiles.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/.git/" --work-tree="$HOME"'
 dotfiles checkout master # Or any relevant branch
 dotfiles restore .
