@@ -128,7 +128,7 @@ PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
 # autojump
-source /etc/profile.d/autojump.sh
+. /usr/share/autojump/autojump.sh
 
 # Antialiasing for swing applications
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
