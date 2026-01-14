@@ -43,7 +43,7 @@
 ;; ;; To automatically add opam emacs directory to the load-path
 (setq opam-share
       (substring
-       (shell-command-to-string "opam var share 2> /dev/null")
+       (shell-command-to-string "opam var share --safe")
        0 -1))
 ;; (setq opam-share "~/.opam/4.04.2/share")
 (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
