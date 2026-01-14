@@ -73,7 +73,7 @@ promptinit
 autoload -U colors
 colors
 # Prompt rigolo : user@host \_o<
-PS1="%(!.%{$fg[red]%}.%{$fg[green]%})%n%{$fg[yellow]%}@%{$fg[default]%}%m %{$fg[blue]%}\%{$fg[red]%}_%{$fg[green]%}o%{$fg[yellow]%}<%{$reset_color%} "
+PS1="%(!.%{$fg[magenta]%}.%{$fg[cyan]%})%n%{$fg[yellow]%}@%{$fg[default]%}%m %{$fg[blue]%}\%{$fg[red]%}_%{$fg[green]%}o%{$fg[yellow]%}<%{$reset_color%} "
 
 RPS1="%(?..%B%{$fg[red]%}%?%b%{$fg[default]%} / )%{$fg[cyan]%}%28<...<%~%<<%{$fg[default]%} / %B%{$fg[cyan]%}%*%b"
 
