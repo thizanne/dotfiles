@@ -7,7 +7,7 @@ I don't use a bare repo as being able to cd-in is invaluable for git debug/fixin
 ```
 git clone https://github.com/thizanne/dotfiles.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/.git/" --work-tree="$HOME"'
-dotfiles checkout # Latest branch?
+dotfiles reset --hard master # Or any relevant branch
 dotfiles config --local status.showUntrackedFiles no
 ```
 
