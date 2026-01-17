@@ -116,7 +116,7 @@ alias smlnj='rlwrap smlnj'
 
 alias vba='VisualBoyAdvance'
 
-alias irc='ssh -4 thibault@pmp6.fr -t "tmux a; zsh"'
+alias irc='ssh -4 thibault@corail.pmp6.fr -t "tmux a; zsh"'
 
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
