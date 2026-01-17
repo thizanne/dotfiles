@@ -119,8 +119,7 @@ alias vba='VisualBoyAdvance'
 alias irc='ssh -4 thibault@corail.pmp6.fr -t "tmux a; zsh"'
 
 # OPAM configuration
-. ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-eval `opam config env`
+[[ ! -r ~/.opam/opam-init/init.zsh ]] || source ~/.opam/opam-init/init.zsh # > /dev/null 2> /dev/null
 
 # Gem configuration
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
