@@ -4,7 +4,8 @@ latex/auto
 
 # .config: explicitly list the unignored subdirectories/files
 .config/*
+!.config/alacritty
 !.config/burp
 !.config/fontconfig
 !.config/mpd
-!.config/alacritty
+!.config/picom.conf

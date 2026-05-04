@@ -29,4 +29,6 @@ thunderbird &
 $MYTERM &
 $MYTERM -e zsh -i -c irc &
 
+picom &
+
 exec xmonad
