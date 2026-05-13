@@ -3,6 +3,17 @@ MYTERM=alacritty
 xrdb -load .Xresources
 xrdb -nocpp -merge .Xkeycodes
 
+# Start some nice programs
+# Imported from /etc/X11/xinit/xinitrc
+# Keep this around to ensure correct initialisation of everything
+xinitdir="/etc/X11/xinit"
+if [ -d "$xinitdir"/xinitrc.d ] ; then
+    for f in "$xinitdir/xinitrc.d"/?*.sh ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
+fi
+
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
 # export SSH_AUTH_SOCK
 
